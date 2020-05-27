@@ -1,0 +1,398 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{713AE33D-9DD5-43B7-A5A2-762342D6E94B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KulaGame</RootNamespace>
+    <AssemblyName>KulaGame</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MonoGamePlatform>Windows</MonoGamePlatform>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Engine\GameObjects\Camera\BasicCamera.cs" />
+    <Compile Include="Engine\GameObjects\Camera\BehindCamera.cs" />
+    <Compile Include="Engine\GameObjects\Level\GameLevel.cs" />
+    <Compile Include="Engine\GameObjects\Models\BaseModel.cs" />
+    <Compile Include="Engine\GameObjects\Models\BrickModel.cs" />
+    <Compile Include="Engine\GameObjects\Models\CameraBoundingBoxModel.cs" />
+    <Compile Include="Engine\GameObjects\Models\CoinModel.cs" />
+    <Compile Include="Engine\GameObjects\Models\CrystalModel.cs" />
+    <Compile Include="Engine\GameObjects\Models\FlagModel.cs" />
+    <Compile Include="Engine\GameObjects\Models\FruitModel.cs" />
+    <Compile Include="Engine\GameObjects\Models\KeyModel.cs" />
+    <Compile Include="Engine\GameObjects\Models\KulaModel.cs" />
+    <Compile Include="Engine\GameObjects\Models\Lists\BaseModelList.cs" />
+    <Compile Include="Engine\GameObjects\Models\Lists\BrickModelList.cs" />
+    <Compile Include="Engine\GameObjects\Models\Lists\CoinsModelList.cs" />
+    <Compile Include="Engine\GameObjects\Models\Lists\CrystalModelList.cs" />
+    <Compile Include="Engine\GameObjects\Models\Lists\FruitModelList.cs" />
+    <Compile Include="Engine\GameObjects\Models\Lists\ObstaclesModelList.cs" />
+    <Compile Include="Engine\GameObjects\Models\Lists\RockModelList.cs" />
+    <Compile Include="Engine\GameObjects\Models\Lists\SkyboardModelList.cs" />
+    <Compile Include="Engine\GameObjects\Models\Lists\SpoolModelList.cs" />
+    <Compile Include="Engine\GameObjects\Models\Lists\TeleportModelList.cs" />
+    <Compile Include="Engine\GameObjects\Models\ObstacleModel.cs" />
+    <Compile Include="Engine\GameObjects\Models\PointModel.cs" />
+    <Compile Include="Engine\GameObjects\Models\PointsModelList.cs" />
+    <Compile Include="Engine\GameObjects\Models\RockModel.cs" />
+    <Compile Include="Engine\GameObjects\Models\SkyboardModel.cs" />
+    <Compile Include="Engine\GameObjects\Models\SkyBox.cs" />
+    <Compile Include="Engine\GameObjects\Models\SkyCylinder.cs" />
+    <Compile Include="Engine\GameObjects\Models\SpoolModel.cs" />
+    <Compile Include="Engine\GameObjects\Models\TeleportModel.cs" />
+    <Compile Include="Engine\Inferfaces\ICamera.cs" />
+    <Compile Include="Engine\Inferfaces\IModel.cs" />
+    <Compile Include="Engine\Inferfaces\IModelList.cs" />
+    <Compile Include="Engine\Utils\AccelInput.cs" />
+    <Compile Include="Engine\Utils\Axis.cs" />
+    <Compile Include="Engine\Utils\BrickType.cs" />
+    <Compile Include="Engine\Utils\CameraRotationAxis.cs" />
+    <Compile Include="Engine\Utils\CameraRotationAxisExact.cs" />
+    <Compile Include="Engine\Utils\Clock.cs" />
+    <Compile Include="Engine\Utils\Common.cs" />
+    <Compile Include="Engine\Utils\CommonGraphics.cs" />
+    <Compile Include="Engine\Utils\FpsCounter.cs" />
+    <Compile Include="Engine\Utils\GameState.cs" />
+    <Compile Include="Engine\Utils\GoOnlineStates.cs" />
+    <Compile Include="Engine\Utils\KulaMoveState.cs" />
+    <Compile Include="Engine\Utils\MusicSettings.cs" />
+    <Compile Include="Engine\Utils\OnlineCredentials.cs" />
+    <Compile Include="Engine\Utils\Pad.cs" />
+    <Compile Include="Engine\Utils\Score.cs" />
+    <Compile Include="Engine\Utils\SettingsEnum.cs" />
+    <Compile Include="Engine\Utils\SkyboardCollision.cs" />
+    <Compile Include="Engine\Utils\SoundManager.cs" />
+    <Compile Include="Engine\Utils\SpecialEffects.cs" />
+    <Compile Include="Engine\Utils\TeleportModelType.cs" />
+    <Compile Include="Engine\Utils\TimeBar.cs" />
+    <Compile Include="KulaGame.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScreenManagement\Advertising\MileniumMedia.cs" />
+    <Compile Include="ScreenManagement\Controls\ButtonControl.cs" />
+    <Compile Include="ScreenManagement\Controls\Control.cs" />
+    <Compile Include="ScreenManagement\Controls\DrawContext.cs" />
+    <Compile Include="ScreenManagement\Controls\HighScorePanel.cs" />
+    <Compile Include="ScreenManagement\Controls\ImageControl.cs" />
+    <Compile Include="ScreenManagement\Controls\PageFlipControl.cs" />
+    <Compile Include="ScreenManagement\Controls\PageFlipTracker.cs" />
+    <Compile Include="ScreenManagement\Controls\PanelControl.cs" />
+    <Compile Include="ScreenManagement\Controls\ScrollingPanelControl.cs" />
+    <Compile Include="ScreenManagement\Controls\ScrollTracker.cs" />
+    <Compile Include="ScreenManagement\Controls\TextControl.cs" />
+    <Compile Include="ScreenManagement\ScreenManager\GameScreen.cs" />
+    <Compile Include="ScreenManagement\ScreenManager\InputState.cs" />
+    <Compile Include="ScreenManagement\ScreenManager\ScreenManager.cs" />
+    <Compile Include="ScreenManagement\Screens\AboutScreen.cs" />
+    <Compile Include="ScreenManagement\Screens\BackgroundScreen.cs" />
+    <Compile Include="ScreenManagement\Screens\CampaignSelectScreen.cs" />
+    <Compile Include="ScreenManagement\Screens\DeleteOnlineSettingsScreen.cs" />
+    <Compile Include="ScreenManagement\Screens\EndGameScreen.cs" />
+    <Compile Include="ScreenManagement\Screens\GameplayScreen.cs" />
+    <Compile Include="ScreenManagement\Screens\HighScoreScreen.cs" />
+    <Compile Include="ScreenManagement\Screens\HowToPlayScreen.cs" />
+    <Compile Include="ScreenManagement\Screens\LevelSelectScreen.cs" />
+    <Compile Include="ScreenManagement\Screens\LoadingScreen.cs" />
+    <Compile Include="ScreenManagement\Screens\MainMenuScreen.cs" />
+    <Compile Include="ScreenManagement\Screens\MenuEntry.cs" />
+    <Compile Include="ScreenManagement\Screens\MenuScreen.cs" />
+    <Compile Include="ScreenManagement\Screens\MusicPromptScreen.cs" />
+    <Compile Include="ScreenManagement\Screens\OnlineAccountScreen.cs" />
+    <Compile Include="ScreenManagement\Screens\PlayerIndexEventArgs.cs" />
+    <Compile Include="ScreenManagement\Screens\Settings.cs" />
+    <Compile Include="ScreenManagement\Screens\SingleControlScreen.cs" />
+    <Compile Include="ScreenManagement\Screens\SplashScreen.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="MonoGame.Framework">
+      <HintPath>$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\Windows\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Background.png" />
+    <Content Include="Content\Control\xboxControllerButtonA.tga" />
+    <Content Include="Content\Control\xboxControllerDPad.tga" />
+    <Content Include="Content\Effects\Boing.png" />
+    <Content Include="Content\Effects\Click.png" />
+    <Content Include="Content\Effects\Dada.png" />
+    <Content Include="Content\Effects\Doing.png" />
+    <Content Include="Content\Effects\puff.png" />
+    <Content Include="Content\Effects\Zzzz.png" />
+    <Content Include="Content\Images\Campaign\0.png" />
+    <Content Include="Content\Images\Campaign\1.png" />
+    <Content Include="Content\Images\Campaign\afryka.png" />
+    <Content Include="Content\Images\Campaign\antarctica.png" />
+    <Content Include="Content\Images\Campaign\australia.png" />
+    <Content Include="Content\Images\Campaign\azja.png" />
+    <Content Include="Content\Images\Campaign\europa.png" />
+    <Content Include="Content\Images\Campaign\northAmerica.png" />
+    <Content Include="Content\Images\Campaign\polodniowaAmeryka.png" />
+    <Content Include="Content\Images\Level\1_1.png" />
+    <Content Include="Content\Images\Level\1_2.png" />
+    <Content Include="Content\Images\Level\1_3.png" />
+    <Content Include="Content\Images\Level\1_4.png" />
+    <Content Include="Content\Images\Level\1_5.png" />
+    <Content Include="Content\Images\Level\2_1.png" />
+    <Content Include="Content\Images\Level\2_2.png" />
+    <Content Include="Content\Images\Level\2_3.png" />
+    <Content Include="Content\Images\Level\2_4.png" />
+    <Content Include="Content\Images\Level\2_5.png" />
+    <Content Include="Content\Images\Level\3_1.png" />
+    <Content Include="Content\Images\Level\3_2.png" />
+    <Content Include="Content\Images\Level\3_3.png" />
+    <Content Include="Content\Images\Level\3_4.png" />
+    <Content Include="Content\Images\Level\3_5.png" />
+    <Content Include="Content\Images\Level\4_1.png" />
+    <Content Include="Content\Images\Level\4_2.png" />
+    <Content Include="Content\Images\Level\4_3.png" />
+    <Content Include="Content\Images\Level\4_4.png" />
+    <Content Include="Content\Images\Level\4_5.png" />
+    <Content Include="Content\Images\Level\5_1.png" />
+    <Content Include="Content\Images\Level\5_2.png" />
+    <Content Include="Content\Images\Level\5_3.png" />
+    <Content Include="Content\Images\Level\5_4.png" />
+    <Content Include="Content\Images\Level\5_5.png" />
+    <Content Include="Content\Images\Level\6_1.png" />
+    <Content Include="Content\Images\Level\6_2.png" />
+    <Content Include="Content\Images\Level\6_3.png" />
+    <Content Include="Content\Images\Level\6_4.png" />
+    <Content Include="Content\Images\Level\6_5.png" />
+    <Content Include="Content\Images\Level\7_1.png" />
+    <Content Include="Content\Images\Level\7_2.png" />
+    <Content Include="Content\Images\Level\7_3.png" />
+    <Content Include="Content\Images\Level\7_4.png" />
+    <Content Include="Content\Images\Level\7_5.png" />
+    <Content Include="Content\Images\Other\arbuz.png" />
+    <Content Include="Content\Images\Other\star.png" />
+    <Content Include="Content\Models\Campaign1\kostka_texture.png" />
+    <Content Include="Content\Models\Campaign1\murzyn.png" />
+    <Content Include="Content\Models\Campaign2\eskimos.png" />
+    <Content Include="Content\Models\Campaign2\kostka_texture.png" />
+    <Content Include="Content\Models\Campaign3\australia.png" />
+    <Content Include="Content\Models\Campaign3\kostka_texture.png" />
+    <Content Include="Content\Models\Campaign4\ameryka polnocna.png" />
+    <Content Include="Content\Models\Campaign4\kostka_texture.png" />
+    <Content Include="Content\Models\Campaign5\kostka_texture.png" />
+    <Content Include="Content\Models\Campaign5\polska.png" />
+    <Content Include="Content\Models\Campaign6\chinczyk.png" />
+    <Content Include="Content\Models\Campaign6\kostka_texture.png" />
+    <Content Include="Content\Models\Campaign6\rise.jpg" />
+    <Content Include="Content\Models\Campaign7\aqmeryka polud.png" />
+    <Content Include="Content\Models\Campaign7\kostka_texture.png" />
+    <Content Include="Content\Models\target.png" />
+    <Content Include="Content\Models\target\target_testure.png" />
+    <Content Include="Content\Models\Teleport\teleport_texture.png" />
+    <Content Include="Content\Music\1.wma" />
+    <Content Include="Content\Music\2.wma" />
+    <Content Include="Content\Music\3.wma" />
+    <Content Include="Content\Music\4.wma" />
+    <Content Include="Content\Music\5.wma" />
+    <Content Include="Content\Music\6.wma" />
+    <Content Include="Content\Music\7.wma" />
+    <Content Include="Content\ScreenManager\background.png" />
+    <Content Include="Content\ScreenManager\coin.png" />
+    <Content Include="Content\ScreenManager\HowTo\howto_1.png" />
+    <Content Include="Content\ScreenManager\HowTo\howto_2.png" />
+    <Content Include="Content\ScreenManager\HowTo\howto_3.png" />
+    <Content Include="Content\ScreenManager\HowTo\howto_4.png" />
+    <Content Include="Content\ScreenManager\HowTo\howto_5.png" />
+    <Content Include="Content\ScreenManager\HowTo\howto_6.png" />
+    <Content Include="Content\ScreenManager\HowTo\howto_7.png" />
+    <Content Include="Content\ScreenManager\kula_game.png" />
+    <Content Include="Content\ScreenManager\logo.png" />
+    <Content Include="Content\ScreenManager\menuBoard.png" />
+    <Content Include="Content\ScreenManager\settingsBoard.png" />
+    <Content Include="Content\ScreenManager\star.png" />
+    <Content Include="Content\ScreenManager\tabliczka.png" />
+    <Content Include="Content\SkyBox\Campaign1\1.png" />
+    <Content Include="Content\SkyBox\Campaign1\2.png" />
+    <Content Include="Content\SkyBox\Campaign1\3.png" />
+    <Content Include="Content\SkyBox\Campaign1\4.png" />
+    <Content Include="Content\SkyBox\Campaign1\5.png" />
+    <Content Include="Content\SkyBox\Campaign1\6.png" />
+    <Content Include="Content\SkyBox\Campaign2\1.png" />
+    <Content Include="Content\SkyBox\Campaign2\2.png" />
+    <Content Include="Content\SkyBox\Campaign2\3.png" />
+    <Content Include="Content\SkyBox\Campaign2\4.png" />
+    <Content Include="Content\SkyBox\Campaign2\5.png" />
+    <Content Include="Content\SkyBox\Campaign2\6.png" />
+    <Content Include="Content\SkyBox\Campaign3\1.png" />
+    <Content Include="Content\SkyBox\Campaign3\2.png" />
+    <Content Include="Content\SkyBox\Campaign3\3.png" />
+    <Content Include="Content\SkyBox\Campaign3\4.png" />
+    <Content Include="Content\SkyBox\Campaign3\5.png" />
+    <Content Include="Content\SkyBox\Campaign3\6.png" />
+    <Content Include="Content\SkyBox\Campaign4\1.png" />
+    <Content Include="Content\SkyBox\Campaign4\2.png" />
+    <Content Include="Content\SkyBox\Campaign4\3.png" />
+    <Content Include="Content\SkyBox\Campaign4\4.png" />
+    <Content Include="Content\SkyBox\Campaign4\5.png" />
+    <Content Include="Content\SkyBox\Campaign4\6.png" />
+    <Content Include="Content\SkyBox\Campaign5\1.png" />
+    <Content Include="Content\SkyBox\Campaign5\2.png" />
+    <Content Include="Content\SkyBox\Campaign5\3.png" />
+    <Content Include="Content\SkyBox\Campaign5\4.png" />
+    <Content Include="Content\SkyBox\Campaign5\5.png" />
+    <Content Include="Content\SkyBox\Campaign5\6.png" />
+    <Content Include="Content\SkyBox\Campaign6\1.png" />
+    <Content Include="Content\SkyBox\Campaign6\2.png" />
+    <Content Include="Content\SkyBox\Campaign6\3.png" />
+    <Content Include="Content\SkyBox\Campaign6\4.png" />
+    <Content Include="Content\SkyBox\Campaign6\5.png" />
+    <Content Include="Content\SkyBox\Campaign6\6.png" />
+    <Content Include="Content\SkyBox\Campaign7\1.png" />
+    <Content Include="Content\SkyBox\Campaign7\2.png" />
+    <Content Include="Content\SkyBox\Campaign7\3.png" />
+    <Content Include="Content\SkyBox\Campaign7\4.png" />
+    <Content Include="Content\SkyBox\Campaign7\5.png" />
+    <Content Include="Content\SkyBox\Campaign7\6.png" />
+    <Content Include="Content\Sounds\Coin.wav" />
+    <Content Include="Content\Sounds\fanfary.wav" />
+    <Content Include="Content\Sounds\intro.wav" />
+    <Content Include="Content\Sounds\klucz.wav" />
+    <Content Include="Content\Sounds\kula-odbicie.wav" />
+    <Content Include="Content\Sounds\kula-przebita.wav" />
+    <Content Include="Content\Sounds\kula-upadek.wav" />
+    <Content Include="Content\Sounds\odbicie_kostka.wav" />
+    <Content Include="Content\Sounds\poza-plansza.wav" />
+    <Content Include="Content\Sounds\przegrana.wav" />
+    <Content Include="Content\Sounds\teleport.wav" />
+    <Content Include="Content\Sounds\tick.wav" />
+    <Content Include="Content\Sounds\trampolina.wav" />
+    <Content Include="Content\Sounds\wygrana.wav" />
+    <Content Include="Content\Sounds\zebranie-przedmiotu.wav" />
+    <Content Include="Content\Textures\again.png" />
+    <Content Include="Content\Textures\again2.png" />
+    <Content Include="Content\Textures\back.png" />
+    <Content Include="Content\Textures\dymek.png" />
+    <Content Include="Content\Textures\key.png" />
+    <Content Include="Content\Textures\kulka.png" />
+    <Content Include="Content\Textures\loading.png" />
+    <Content Include="Content\Textures\loading2.png" />
+    <Content Include="Content\Textures\mainmenu.png" />
+    <Content Include="Content\Textures\movie.png" />
+    <Content Include="Content\Textures\next.png" />
+    <Content Include="Content\Textures\no.png" />
+    <Content Include="Content\Textures\ok.png" />
+    <Content Include="Content\Textures\panda.png" />
+    <Content Include="Content\Textures\pixel.png" />
+    <Content Include="Content\Textures\plansza.png" />
+    <Content Include="Content\Textures\wskazowka.png" />
+    <Content Include="Content\Textures\yes.png" />
+    <Content Include="Content\Textures\zegarek.png" />
+    <Content Include="Content\Textures\zolty.png" />
+    <Content Include="GameThumbnail.png" />
+    <Content Include="Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <MonoGameContentReference Include="Content\Content.mgcb" />
+    <None Include="app.manifest" />
+    <None Include="Content\Fonts\Andy.spritefont" />
+    <None Include="Content\Fonts\bigAndy.spritefont" />
+    <None Include="Content\Fonts\Jing.spritefont" />
+    <None Include="Content\Fonts\StandardFont.spritefont" />
+    <None Include="Content\Fonts\StatusFont.spritefont" />
+    <None Include="Content\Models\Campaign1\banan.fbx" />
+    <None Include="Content\Models\Campaign1\kostka.fbx" />
+    <None Include="Content\Models\Campaign1\kostka_default.fbx" />
+    <None Include="Content\Models\Campaign1\kropla.fbx" />
+    <None Include="Content\Models\Campaign1\kula.fbx" />
+    <None Include="Content\Models\Campaign2\fish.fbx" />
+    <None Include="Content\Models\Campaign2\icecream.fbx" />
+    <None Include="Content\Models\Campaign2\icecube.fbx" />
+    <None Include="Content\Models\Campaign2\kostka_default.fbx" />
+    <None Include="Content\Models\Campaign2\kula.fbx" />
+    <None Include="Content\Models\Campaign3\eukaliptus.fbx" />
+    <None Include="Content\Models\Campaign3\kostka_default.fbx" />
+    <None Include="Content\Models\Campaign3\kula.fbx" />
+    <None Include="Content\Models\Campaign4\kostka_default.fbx" />
+    <None Include="Content\Models\Campaign4\kula.fbx" />
+    <None Include="Content\Models\Campaign4\trash.fbx" />
+    <None Include="Content\Models\Campaign5\dudle.fbx" />
+    <None Include="Content\Models\Campaign5\kostka_default.fbx" />
+    <None Include="Content\Models\Campaign5\kula.fbx" />
+    <None Include="Content\Models\Campaign6\kostka_default.fbx" />
+    <None Include="Content\Models\Campaign6\kula.fbx" />
+    <None Include="Content\Models\Campaign6\rise_model.fbx" />
+    <None Include="Content\Models\Campaign7\axe.fbx" />
+    <None Include="Content\Models\Campaign7\kostka_default.fbx" />
+    <None Include="Content\Models\Campaign7\kula.fbx" />
+    <None Include="Content\Models\coin.fbx" />
+    <None Include="Content\Models\crystal\crystal.fbx" />
+    <None Include="Content\Models\FLAGA.fbx" />
+    <None Include="Content\Models\klucz.fbx" />
+    <None Include="Content\Models\kolce.fbx" />
+    <None Include="Content\Models\kostka-rubber.fbx" />
+    <None Include="Content\Models\kulka.fbx" />
+    <None Include="Content\Models\rock\rock.fbx" />
+    <None Include="Content\Models\skyboard\skyboard.fbx" />
+    <None Include="Content\Models\Spool\spool.fbx" />
+    <None Include="Content\Models\target\target.fbx" />
+    <None Include="Content\Models\Teleport\teleport.fbx" />
+    <None Include="Content\Models\Teleport\teleport_blue.fbx" />
+    <None Include="Content\Models\Teleport\teleport_red.fbx" />
+    <None Include="Content\ScreenManager\Font\Andy.spritefont" />
+    <None Include="Content\ScreenManager\Font\Highscore.spritefont" />
+    <None Include="Content\ScreenManager\Font\Jing.spritefont" />
+    <None Include="Content\ScreenManager\Font\MenuDetail.spritefont" />
+    <None Include="Content\ScreenManager\Font\MenuHeader.spritefont" />
+    <None Include="Content\ScreenManager\Font\MenuTitle.spritefont" />
+    <None Include="Content\ScreenManager\gamefont.spritefont" />
+    <None Include="Content\SkyBox\Campaign1\skybox.fbx" />
+    <None Include="Content\SkyBox\Campaign2\skybox.fbx" />
+    <None Include="Content\SkyBox\Campaign3\skybox.fbx" />
+    <None Include="Content\SkyBox\Campaign4\skybox.fbx" />
+    <None Include="Content\SkyBox\Campaign5\skybox.fbx" />
+    <None Include="Content\SkyBox\Campaign6\skybox.fbx" />
+    <None Include="Content\SkyBox\Campaign7\skybox.fbx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KulaGame.LevelDefinition\KulaGame.LevelDefinition.csproj">
+      <Project>{0d358706-91f4-4cc3-95ee-5c7858e33191}</Project>
+      <Name>KulaGame.LevelDefinition</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
